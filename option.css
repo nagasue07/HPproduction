@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+body {
+    font-family: 'Merriweather', serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 90px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+}
+
+.header-buttons {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-button, .instagram-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-button {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+    z-index: 1002;
+}
+
+.menu-button:hover, .instagram-button:hover {
+    transform: scale(1.1);
+}
+
+.menu-button .menu-icon {
+    width: 40px;
+    height: 30px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.menu-button .menu-icon span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: #006400;
+    border-radius: 3px;
+}
+
+.menu-button .menu-text {
+    font-size: 16px;
+    color: #006400;
+}
+
+.instagram-button {
+    width: 60px;
+    height: 70px;
+    margin-right: 10px;
+    background-image: url('insta.png');
+    background-size: cover;
+    background-position: center;
+}
+
+#menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 100, 0, 0.95);
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+    z-index: 1002;
+    padding-top: 60px;
+}
+
+#close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 48px;
+    cursor: pointer;
+    z-index: 1003;
+}
+
+#navigation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    padding-top: 60px;
+}
+
+#main-menu, #alacarte-menu-items {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+#main-menu li, #alacarte-menu-items li {
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#main-menu li a, #alacarte-menu-items li a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+h1 {
+    font-size: 2.5em;
+    text-align: center;
+    margin: 50px 0 50px 0;
+    opacity: 0;
+}
+
+.menu {
+    margin-top: 10px;
+    opacity: 0;
+}
+
+.menu-item {
+    margin: 20px 0 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.item-description {
+    flex: 1;
+}
+
+.menu-item h2 {
+    margin: 0;
+    font-size: 1.5em;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.menu-item p {
+    margin: 5px 0 0 0;
+    font-size: 1.2em;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.price {
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.5em;
+    opacity: 0;
+    margin-left: 20px;
+    text-align: right;
+    white-space: nowrap;
+    transition: opacity 0.5s ease;
+}
+
+.price p {
+    margin: 0;
+    font-size: 1em;
+    text-align: right;
+}
+
+.featured-dish {
+    display: flex;
+    height: auto; /* 高さをコンテンツに合わせる */
+    width: 90%;
+    max-width: 1000px;
+    margin: 20px auto; /* コンテナの上下にマージンを追加 */
+    padding: 30px;
+    opacity: 0; /* 初期状態は透明 */
+    transform: translateY(20px); /* 下からスライドイン */
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    justify-content: center; /* コンテンツを中央に配置 */
+}
+
+.left-content {
+    width: 50%; /* left-contentの幅を50%に */
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 中央に配置 */
+    text-align: left; /* 左揃え */
+}
+
+.left-content h2, .left-content p, .left-content .price {
+    text-align: left; /* 文字要素の左揃え */
+}
+
+.right-content {
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+    border-radius: 8px;
+}
+
+.spacer {
+    display: none; /* 中央配置にするためスペーサーを非表示 */
+}
+
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.show-item {
+    opacity: 1;
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+footer {
+    background-color: #004d00;
+    color: white;
+    padding: 15px;
+    margin-top: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Noto Serif JP', serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+    align-self: flex-end;
+}
+
+footer p {
+    margin: 3px 0;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+
+.copyright p {
+    margin: 0;
+}
+
+@media only screen and (max-width: 768px) {
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 100px;
+        padding-bottom: 100px;
+    }
+
+    .footer-left, .footer-right {
+        font-size: 0.9em;
+    }
+
+    footer {
+        padding: 10px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    body {
+        padding-top: 80px;
+        padding-bottom: 80px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-left, .footer-right {
+        font-size: 0.8em;
+        text-align: center;
+        width: 100%;
+    }
+
+    footer {
+        padding: 8px;
+    }
+}

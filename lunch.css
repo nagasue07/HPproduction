@@ -1,0 +1,457 @@
+/* 基本スタイル設定 */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* フッターを画面下に固定するために必要 */
+}
+
+body {
+    font-family: 'Merriweather', serif; /* 高級感のあるフォント */
+    background-color: #f0f0f0; /* 白に近いグレー */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding-top: 80px; /* ヘッダーの高さに応じて調整 */
+}
+
+/* ヘッダーの設定 */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 90px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+}
+
+.header-buttons {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-button, .instagram-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-button {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+    z-index: 1002;
+}
+
+.menu-button:hover, .instagram-button:hover {
+    transform: scale(1.1);
+}
+
+.menu-button .menu-icon {
+    width: 40px;
+    height: 30px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.menu-button .menu-icon span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: #006400;
+    border-radius: 3px;
+}
+
+.menu-button .menu-text {
+    font-size: 16px;
+    color: #006400;
+}
+
+.instagram-button {
+    width: 60px;
+    height: 70px;
+    margin-right: 10px;
+    background-image: url('insta.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* メニューオーバーレイの設定 */
+#menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 100, 0, 0.95);
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+    z-index: 1002; /* オーバーレイの z-index を調整 */
+    padding-top: 60px;
+}
+
+/* close-menu の設定 */
+#close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 48px;
+    cursor: pointer;
+    z-index: 1003; /* close-menu の z-index をオーバーレイより上に設定 */
+}
+
+#navigation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    padding-top: 60px;
+    z-index: 1001; /* メニュー内容の z-index をオーバーレイの下に設定 */
+}
+
+#main-menu, #alacarte-menu-items {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+#main-menu li, #alacarte-menu-items li {
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#main-menu li a, #alacarte-menu-items li a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    position: fixed;
+    top: 80px;
+    right: -33.33%;
+    width: 33.33%;
+    height: calc(100vh - 80px);
+    background-color: #006400;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+}
+
+nav.visible {
+    right: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul li {
+    margin: 0 0 1cm 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+}
+
+nav ul li a:hover {
+    opacity: 0.8;
+}
+
+.title {
+    font-family: 'Times New Roman', serif;
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 50px;
+}
+
+.header-title {
+    margin-top: 60px; /* Adjust this value to match your header height */
+    text-align: center;
+    padding: 20px;
+}
+
+.course {
+    margin-bottom: 50px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.course h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.course-content {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* レスポンシブ対応で要素を折り返し */
+}
+
+.course-content img {
+    width: 40%;
+    border-radius: 10px;
+    margin-bottom: 20px; /* 余白を追加 */
+}
+
+.description {
+    margin-left: 20px;
+    flex-grow: 1;
+}
+
+.description p {
+    font-size: 1.5rem;
+    margin: 20px 10px;
+}
+
+.price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.menu-item span:first-child {
+    font-weight: bold;
+    width: 30%;
+}
+
+.menu-item span:last-child {
+    width: 70%;
+    text-align: left;
+}
+
+/* フッターのスタイル */
+footer {
+    background-color: #004d00;
+    color: white;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Noto Serif JP', serif;
+    position: relative;
+    bottom: 0;
+    scroll-snap-align: start;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-left {
+    text-align: left;
+}
+
+.footer-right {
+    text-align: right;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+    clear: both;
+}
+
+/* モバイルデバイス用のスタイル */
+@media only screen and (max-width: 768px) {
+    .header-buttons {
+        top: 10px;
+        right: 5px;
+    }
+
+    .menu-button {
+        margin-right: 20px;
+        width: 50px;
+    }
+
+    .menu-button .menu-icon {
+        width: 30px;
+    }
+
+    .menu-button .menu-text {
+        font-size: 14px;
+    }
+
+    .instagram-button {
+        width: 50px;
+        height: 60px;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .course h2 {
+        font-size: 1.8rem;
+    }
+
+    .description p {
+        font-size: 0.9rem;
+        margin: 10px 10px;
+    }
+
+    .price {
+        font-size: 1.3rem;
+    }
+
+    /* 画像要素を中央に配置 */
+    .course-content {
+        flex-direction: column;
+        align-items: center; /* 画像とテキストを中央に揃える */
+        text-align: center;
+    }
+
+    .course-content img {
+        width: 80%; /* 画像サイズを調整 */
+        margin-bottom: 20px;
+    }
+
+    footer {
+        padding: 15px;
+    }
+
+    footer p {
+        font-size: 0.9em;
+    }
+
+    .copyright {
+        font-size: 0.8em;
+    }
+}
+
+/* 非常に小さな画面用のスタイル */
+@media only screen and (max-width: 480px) {
+    .header-buttons {
+        top: 5px;
+        right: 5px;
+    }
+
+    .menu-button {
+        margin-right: 10px;
+        width: 40px;
+    }
+
+    .menu-button .menu-icon {
+        width: 35px;
+    }
+
+    .menu-button .menu-text {
+        font-size: 12px;
+    }
+
+    .instagram-button {
+        width: 40px;
+        height: 50px;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
+
+    .header-title {
+        margin-top: 70px;
+    }
+
+    .course h2 {
+        font-size: 1.5rem;
+    }
+
+    .description p {
+        font-size: 0.8rem;
+        margin: 10px;
+    }
+
+    .price {
+        font-size: 1.2rem;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* 画像要素を中央に配置 */
+    .course-content {
+        flex-direction: column;
+        align-items: center; /* 画像とテキストを中央に揃える */
+        text-align: center;
+    }
+
+    .course-content img {
+        width: 90%; /* 画像サイズをさらに調整 */
+        margin-bottom: 20px;
+    }
+
+    .footer-left, .footer-right {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    footer p {
+        font-size: 0.8em;
+        margin: 2px 0;
+    }
+
+    .copyright {
+        margin-top: 8px;
+        font-size: 0.7em;
+    }
+
+    footer {
+        padding: 8px;
+    }
+}

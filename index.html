@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8" />
+    <title>restaurant den</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- OGPタグ -->
+    <meta property="og:title" content="レストラン傳 - 創業42年の老舗イタリアン" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://restaurant-den.jp/" />
+    <meta property="og:image" content="https://restaurant-den.jp/ogp-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content="創業42年の老舗イタリアレストラン傳です。クラシックなイタリア料理をご堪能いただけます。" />
+    <meta property="og:site_name" content="レストラン傳" />
+    <meta property="og:locale" content="ja_JP" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@restaurant_den" />
+    <meta name="twitter:title" content="レストラン傳 - 創業42年の老舗イタリアン" />
+    <meta name="twitter:description" content="創業42年の老舗イタリアレストラン傳です。クラシックなイタリア料理をご堪能いただけます。" />
+    <meta name="twitter:image" content="https://restaurant-den.jp/ogp-image.jpg" />
+    
+    <!-- その他の重要なメタタグ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="創業42年の老舗イタリアレストラン傳です。クラシックなイタリア料理をご堪能いただけます。" />
+</head>
+<body>
+    <!-- イントロ画面 -->
+    <div class="intro-screen">
+        <div class="intro-content">
+            <img src="iconintro.png" alt="Restaurant Logo">
+        </div>
+    </div>
+
+    <!-- メイン画像 -->
+    <div class="main-image">
+        <div class="slideshow-container">
+            <img src="background.png" alt="Background 1" class="slide">
+            <img src="background2.jpg" alt="Background 2" class="slide">
+            <img src="background3.jpg" alt="Background 3" class="slide">
+            <img src="background4.jpg" alt="Background 4" class="slide">
+            <img src="background5.jpg" alt="Background 5" class="slide">
+        </div>        
+        <header>
+            <!-- ヘッダーボタン -->
+            <div class="header-buttons">
+                <button class="instagram-button"></button>
+                <button class="menu-button" id="open-menu">
+                    <span class="menu-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                    <span class="menu-text">menu</span>
+                </button>
+            </div>
+        </header>
+    </div>
+
+    <!-- メニューオーバーレイ -->
+    <div id="menu-overlay">
+        <button id="close-menu">×</button>
+        <nav id="navigation">
+            <ul id="main-menu">
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="course-select.html">コース</a></li>
+                <li><a href="#" id="alacarte-menu">アラカルト</a></li>
+                <li><a href="reservation.html">予約</a></li>
+                <li><a href="access.html">アクセス</a></li>
+            </ul>
+            <!-- アラカルトメニュー項目: -->
+            <ul id="alacarte-menu-items" style="display:none;">
+                <li><a href="appetizer.html">前菜</a></li>
+                <li><a href="fish.html">魚料理</a></li>
+                <li><a href="meat.html">肉料理</a></li>
+                <li><a href="spaghetti.html">パスタ</a></li>
+                <li><a href="pizza.html">ピザ</a></li>
+                <li><a href="dessert.html">デザート</a></li>
+                <li><a href="option.html">グラタン・米飯料理・スープ・その他</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <!-- イントロセクション -->
+        <section class="intro">
+            <div class="background"></div>
+            <h2>創業42年の老舗イタリアン</h2>
+            <p>クラシックなイタリア料理をお楽しみいただけます</p>
+            <p>長くお客様のご愛顧の元営業しております。</p>
+        </section>
+
+        <!-- セクション1 -->
+        <section class="section-1">
+            <div class="content-container">
+                <div class="left-content">
+                    <h3>雰囲気</h3>
+                    <p>落ち着いた雰囲気の外観と内装。</p>
+                    <p>ゆったりとお食事をお楽しみいただけます。</p>
+                </div>
+                <div class="right-content">
+                    <img src="mood1.jpg" alt="Mood 1">
+                    <img src="mood2.jpg" alt="Mood 2">
+                </div>
+            </div>
+        </section>
+
+        <!-- セクション2 -->
+        <section class="section-2">
+            <div class="content-container">
+                <div class="left-content">
+                    <img src="taste1.jpg" alt="Taste 1">
+                    <img src="taste2.jpg" alt="Taste 2">
+                </div>
+                <div class="right-content">
+                    <h3>クラシックな西洋の味</h3>
+                    <p>10代の頃にイタリアで修行をしたシェフが作っております。</p>
+                    <p>西洋で昔から愛されている料理をお楽しみください。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>レストラン傳</p>
+                <p>815-0041  福岡県福岡市南区野間４丁目４−２８</p>
+            </div>
+            <div class="footer-right">
+                <p>092-512-4260</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © restaurant-den All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

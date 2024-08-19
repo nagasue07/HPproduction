@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservation</title>
+    <link rel="stylesheet" href="reservation.css">
+</head>
+<body>
+    <header>
+        <!-- ヘッダーボタン -->
+        <div class="header-buttons">
+            <button class="instagram-button"></button>
+            <button class="menu-button" id="open-menu">
+                <span class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <span class="menu-text">menu</span>
+            </button>
+        </div>
+    </header>
+    <div id="menu-overlay">
+        <button id="close-menu">×</button>
+        <nav id="navigation">
+            <ul id="main-menu">
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="course-select.html">コース</a></li>
+                <li><a href="#" id="alacarte-menu">アラカルトメニュー</a></li>
+                <li><a href="reservation.html">予約</a></li>
+                <li><a href="access.html">アクセス</a></li>
+            </ul>
+            <!-- アラカルトメニューを押したら表示 -->
+            <ul id="alacarte-menu-items" style="display:none;">
+                <li><a href="appetizer.html">前菜</a></li>
+                <li><a href="fish.html">お魚料理</a></li>
+                <li><a href="meat.html">お肉料理</a></li>
+                <li><a href="spaghetti.html">パスタ</a></li>
+                <li><a href="pizza.html">ピザ</a></li>
+                <li><a href="dessert.html">デザート</a></li>
+                <li><a href="option.html">グラタン・米飯料理・スープ・その他</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="header">
+            <h1 id="title">予約</h1>
+            <p id="subtitle">reservation</p>
+        </div>
+        <div class="contact-info">
+            <p id="phone-label">電話番号</p>
+            <p id="phone-number">092-512-4260</p>
+        </div>
+        <div class="form-container">
+            <p id="form-label">お問い合わせフォーム</p>
+            <form id="reservation-form" action="https://formspree.io/f/xnqlbvky" method="POST">
+                <input type="hidden" name="_cc" value="adgen.nt@gmail.com">
+                <div class="form-group">
+                    <label for="name">お名前</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">電話番号</label>
+                    <input type="tel" id="phone" name="phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">内容</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">送信</button>
+            </form>
+            <div id="thank-you-message" class="thank-you-message">
+                お問い合わせありがとうございます。ご予約については担当の者からお電話を差し上げその後予約確定となります。
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>レストラン傳</p>
+                <p>〒815-0041　福岡県福岡市南区野間４丁目４−２８</p>
+            </div>
+            <div class="footer-right">
+                <p>092-512-4260</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © restaurant-den All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="reservation.js"></script>
+</body>
+</html>

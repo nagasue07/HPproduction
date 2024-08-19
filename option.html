@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>メニューオプション</title>
+    <link rel="stylesheet" href="option.css">
+</head>
+<body>
+    <header>
+        <!-- ヘッダーボタン -->
+        <div class="header-buttons">
+            <button class="instagram-button"></button>
+            <button class="menu-button" id="open-menu">
+                <span class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <span class="menu-text">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <div id="menu-overlay">
+        <button id="close-menu">×</button>
+        <nav id="navigation">
+            <ul id="main-menu">
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="course-select.html">コース</a></li>
+                <li><a href="#" id="alacarte-menu">アラカルトメニュー</a></li>
+                <li><a href="reservation.html">予約</a></li>
+                <li><a href="access.html">アクセス</a></li>
+            </ul>
+            <!-- アラカルトメニューを押したら表示 -->
+            <ul id="alacarte-menu-items" style="display:none;">
+                <li><a href="appetizer.html">前菜</a></li>
+                <li><a href="fish.html">お魚料理</a></li>
+                <li><a href="meat.html">お肉料理</a></li>
+                <li><a href="spaghetti.html">パスタ</a></li>
+                <li><a href="pizza.html">ピザ</a></li>
+                <li><a href="dessert.html">デザート</a></li>
+                <li><a href="option.html">グラタン・米飯料理・スープ・その他</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+                <h1 id="rice-title">米飯料理</h1>
+            <div class="featured-dish">
+        <div class="left-content">
+            <h2>パエリア</h2>
+            <p>魚介たっぷりの傳風パエリア</p>
+            <p>（※コース料理対象外）</p>
+            <div class="price">
+                <p>￥2,480</p>
+            </div>
+        </div>
+        <div class="spacer"></div>
+        <div class="right-content" style="background-image: url('rice.jpg');"></div>
+    </div>
+
+    <div id="rice-menu" class="menu">
+            <div class="menu-item">
+                <div class="item-description">
+                    <h2>アサリ貝のリゾット</h2>
+                    <p>リゾットの代名詞と言える一品！人気メニューです！</p>
+                </div>
+                <div class="price">
+                    <p>￥1,150</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-description">
+                    <h2>ゴルゴンゾーラチーズのリゾット</h2>
+                    <p>アオカビのゴルゴンゾーラチーズをクリーミーに仕上げます。</p>
+                </div>
+                <div class="price">
+                    <p>￥1,280</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-description">
+                    <h2>イカスミのリゾット</h2>
+                    <p>濃厚なイカスミソースをリゾットでもご堪能くださいませ。</p>
+                    <p>※コース料理</p>
+                    <p>  ＋￥400</p>
+                </div>
+                <div class="price">
+                    <p>￥1,300</p>
+                </div>
+            </div>
+        </div>
+        <h1 id="gratin-title">グラタン</h1>
+        <div id="gratin-menu" class="menu">
+            <div class="menu-item">
+                <div class="item-description">
+                    <h2>茄子のチーズグラタン</h2>
+                    <p>揚げ茄子とミートソース、チーズの重ね焼き</p>
+                </div>
+                <div class="price">
+                    <p>￥1,060</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-description">
+                    <h2>ラザニア</h2>
+                    <p>平らな麺とミートソース、チーズ、生ハムの重ね焼き</p>
+                </div>
+                <div class="price">
+                    <p>￥1,180</p>
+                </div>
+            </div>
+        </div>
+
+        <h1 id="soup-title">スープ・その他</h1>
+        <div id="soup-menu" class="menu">
+            <div class="menu-item">
+                <div class="item-description">
+                    <h2>クリームポタージュ</h2>
+                    <p>コーンの甘さと香りで癒されます</p>
+                </div>
+                <div class="price">
+                    <p>￥580</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-description">
+                    <h2>ミネストローネ</h2>
+                    <p>具たくさんの野菜を煮込んだ田舎風野菜スープ</p>
+                </div>
+                <div class="price">
+                    <p>￥600</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-description">
+                    <h2>パン・ライス</h2>
+                </div>
+                <div class="price">
+                    <p>￥270</p>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-description">
+                    <h2>ガーリックトースト</h2>
+                </div>
+                <div class="price">
+                    <p>￥350</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>レストラン傳</p>
+                <p>〒815-0041　福岡県福岡市南区野間４丁目４−２８</p>
+            </div>
+            <div class="footer-right">
+                <p>092-512-4260</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © restaurant-den All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="option.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お魚料理 - レストラン傳</title>
+    <link rel="stylesheet" href="fish.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-buttons">
+            <button class="instagram-button"></button>
+            <button class="menu-button" id="open-menu">
+                <span class="menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </span>
+                <span class="menu-text">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <div id="menu-overlay">
+        <button id="close-menu">×</button>
+        <nav id="navigation">
+            <ul id="main-menu">
+                <li><a href="index.html">ホーム</a></li>
+                <li><a href="course-select.html">コース</a></li>
+                <li><a href="#" id="alacarte-menu">アラカルトメニュー</a></li>
+                <li><a href="reservation.html">予約</a></li>
+                <li><a href="access.html">アクセス</a></li>
+            </ul>
+            <ul id="alacarte-menu-items" style="display:none;">
+                <li><a href="appetizer.html">前菜</a></li>
+                <li><a href="fish.html">お魚料理</a></li>
+                <li><a href="meat.html">お肉料理</a></li>
+                <li><a href="spaghetti.html">パスタ</a></li>
+                <li><a href="pizza.html">ピザ</a></li>
+                <li><a href="dessert.html">デザート</a></li>
+                <li><a href="option.html">グラタン・米飯料理・スープ・その他</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="container">
+        <h1 id="fish-title">お魚料理</h1>
+        <div class="featured-dish">
+            <div class="left-content">
+                <h2>魚介類のトマトソース煮（ガーリックトースト添え）</h2>
+                <p>魚介類のうまみが凝縮された一品</p>
+                <div class="price">
+                    <span>￥1,580</span>
+                    <p>※コース料理</p>
+                    <p>  ＋￥300</p>
+                </div>
+            </div>
+            <div class="spacer"></div>
+            <div class="right-content"></div>
+        </div>
+        <div id="menu">
+            <div class="menu-item">
+                <div class="item-description">
+                    <h2>帆立貝のソテープロヴァンサル風</h2>
+                    <p>帆立貝柱のソテーにカリカリのパン粉バターソースを乗せて</p>
+                </div>
+                <div class="price">
+                    <span>￥1,380</span>
+                </div>
+            </div>
+            <div class="menu-item">
+                <div class="item-description">
+                    <h2>車海老のトマトソース煮（バターライス添え）</h2>
+                    <p>女性に人気！新鮮な車海老の触感をトマトクリームソースとご一緒に</p>
+                </div>
+                <div class="price">
+                    <span>￥1,380</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p>レストラン傳</p>
+                <p>〒815-0041　福岡県福岡市南区野間４丁目４−２８</p>
+            </div>
+            <div class="footer-right">
+                <p>092-512-4260</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>Copyright © restaurant-den All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="fish.js"></script>
+</body>
+</html>

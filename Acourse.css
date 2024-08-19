@@ -1,0 +1,334 @@
+/* 基本スタイル設定 */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* フッターを画面下に固定するために必要 */
+}
+
+body {
+    font-family: 'Merriweather', serif; /* 高級感のあるフォント */
+    background-color: #f0f0f0; /* 白に近いグレー */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding-top: 90px; /* ヘッダーの高さに応じて調整 */
+    min-height: 100vh; /* 最小高さを画面の高さに設定 */
+}
+
+/* ヘッダーの設定 */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 90px;
+    box-sizing: border-box;
+    padding: 10px 20px;
+}
+
+.header-buttons {
+    position: absolute;
+    top: 20px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.menu-button, .instagram-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-button {
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60px;
+    z-index: 1002;
+}
+
+.menu-button:hover, .instagram-button:hover {
+    transform: scale(1.1);
+}
+
+.menu-button .menu-icon {
+    width: 40px;
+    height: 30px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.menu-button .menu-icon span {
+    display: block;
+    height: 4px;
+    width: 100%;
+    background: #006400;
+    border-radius: 3px;
+}
+
+.menu-button .menu-text {
+    font-size: 16px;
+    color: #006400;
+}
+
+.instagram-button {
+    width: 60px;
+    height: 70px;
+    margin-right: 10px;
+    background-image: url('insta.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* メニューオーバーレイの設定 */
+#menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 100, 0, 0.95);
+    display: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+    z-index: 1002;
+    padding-top: 60px;
+}
+
+#close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 48px;
+    cursor: pointer;
+}
+
+#navigation {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 600px;
+    padding-top: 60px;
+}
+
+#main-menu, #alacarte-menu-items {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+#main-menu li, #alacarte-menu-items li {
+    margin-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+#main-menu li a, #alacarte-menu-items li a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    position: fixed;
+    top: 80px;
+    right: -33.33%;
+    width: 33.33%;
+    height: calc(100vh - 80px);
+    background-color: #006400;
+    transition: right 0.3s ease-in-out;
+    overflow-y: auto;
+}
+
+nav.visible {
+    right: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+nav ul li {
+    margin: 0 0 1cm 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: opacity 0.3s ease;
+}
+
+nav ul li a:hover {
+    opacity: 0.8;
+}
+
+/* コンテナのスタイル */
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 20px auto; /* 上下のマージンを追加 */
+    padding: 20px;
+    box-sizing: border-box;
+    flex: 1; /* フレックスグロー */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* コンテンツを上揃えに */
+}
+
+/* タイトルのスタイル */
+#title {
+    font-size: 2.5em; /* 少し小さく */
+    opacity: 0;
+}
+
+/* メニューリストのスタイル */
+#menu {
+    margin-top: 40px;
+    opacity: 0;
+}
+
+#menu p {
+    margin: 10px 0; /* マージンを少し小さく */
+    font-size: 1.2em; /* 少し小さく */
+    opacity: 0;
+}
+
+/* 価格表示のスタイル */
+#price {
+    margin-top: 40px;
+    font-size: 1.5em; /* 少し小さく */
+    opacity: 0;
+}
+
+/* フェードインアニメーション */
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* フッターのスタイル */
+footer {
+    background-color: #004d00;
+    color: white;
+    padding: 15px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: 'Noto Serif JP', serif;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: nowrap; /* 改行を防ぐ */
+}
+
+.footer-left, .footer-right {
+    font-size: 0.9em; /* フォントサイズを調整 */
+    white-space: nowrap; /* 改行を防ぐ */
+    overflow: hidden;
+    text-overflow: ellipsis; /* 必要に応じてテキストの省略を追加 */
+    text-align: left;
+}
+
+footer p {
+    margin: 3px 0;
+}
+
+.copyright {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+
+.copyright p {
+    margin: 0;
+}
+
+/* レスポンシブデザイン：携帯画面用 */
+@media (max-width: 768px) {
+    body {
+        padding-top: 80px; /* モバイルでヘッダーが小さくなる場合 */
+    }
+
+    .container {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .image-container {
+        width: 80%;
+        margin: 10px 0;
+    }
+
+    .center-text {
+        margin: 20px 0;
+    }
+
+    .footer-left, .footer-right {
+        font-size: 0.8em; /* フォントサイズを調整 */
+    }
+}
+
+/* 非常に小さな画面用のスタイル */
+@media (max-width: 480px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-left, .footer-right {
+        text-align: center;
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    footer p {
+        font-size: 0.8em;
+        margin: 2px 0;
+    }
+
+    .copyright {
+        margin-top: 8px;
+        font-size: 0.7em;
+    }
+
+    footer {
+        padding: 8px;
+    }
+}
